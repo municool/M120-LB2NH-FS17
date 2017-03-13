@@ -128,7 +128,7 @@ namespace M120_LB2NH_FS17
         {
             Content.Children.Clear();
             Content.Children.Add(CreateTischOrdnungsView());
-            NavigationGrid.Children.Remove(_newPersonButton);
+            RemoveNewPersonButton();
         }
 
         private PersonView CreatePersonView(Person p = null)
@@ -143,11 +143,16 @@ namespace M120_LB2NH_FS17
 
             if (p == null) return view;
 
+            //done
+
             view.txtAnrede.Text = p.Anrede;
             view.txtFirma.Text = p.Firma;
             view.txtName.Text = p.Name;
-            view.dpGeburtstag.DisplayDate = p.Geburtsdatum;
+            view.dpGeburtstag.SelectedDate = p.Geburtsdatum;
             view.lblUpdate.Content = "true";
+            view.cbVeranstalltung.SelectedItem = p.Tisch.Veranstaltung;
+            view.cbTisch.SelectedItem = p.Tisch;
+            view.txtChair.Text = p.Platz == 0 ? "Kein Platz" : p.Platz.ToString();
 
             return view;
         }
