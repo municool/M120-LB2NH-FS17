@@ -27,7 +27,6 @@ C:\Users\municool\Documents\Development\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debu
 C:\Users\municool\Documents\Development\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\M120-LB2NH-FS17.csproj.GenerateResource.Cache
 C:\Users\municool\Documents\Development\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\PersonListView.g.cs
 C:\Users\municool\Documents\Development\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\PersonListView.baml
-C:\Users\municool\Documents\Development\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\municool\Documents\Development\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\PersonView.g.cs
 C:\Users\municool\Documents\Development\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\PersonView.baml
 C:\Users\municool\Documents\Development\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\Tischordnung.g.cs

@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="725">
     <Grid>
         <Grid x:Name="NavigationGrid" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Width="110">
-            <!--<ComboBox x:Name="comboBoxVeranstaltungen" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="90"/>-->
+            <ComboBox x:Name="comboBoxVeranstaltungen" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="90"/>
             <Button x:Name="btnTableView" Content="Tischordnung" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Width="90" Click="btnTableView_Click"/>
             <Button x:Name="btnAllPersons" Content="Alle Personen" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Width="90" Click="btnAllPersons_Click"/>
         </Grid>

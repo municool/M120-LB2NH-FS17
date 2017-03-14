@@ -51,7 +51,7 @@ namespace M120_LB2NH_FS17
                 person.Platz = placeIndex;
             else
             {
-                ShowError("Bitte geben Sie ein Zahl ein die kleiner oder gleich wie die Maximalzahl ist!");
+                ShowError("Bitte geben Sie ein Zahl ein die kleiner \noder gleich wie die Maximalzahl ist!");
                 return;
             }
 

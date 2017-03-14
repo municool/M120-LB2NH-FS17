@@ -16,6 +16,8 @@ namespace M120_LB2NH_FS17
         {
             InitializeComponent();
             DatenBereitstellen();
+            comboBoxVeranstaltungen.ItemsSource = Bibliothek.Veranstaltungen_Alle();
+            comboBoxVeranstaltungen.SelectedIndex = 0;
 
         }
         #region Demodaten
@@ -98,15 +100,26 @@ namespace M120_LB2NH_FS17
         private void ShowUpdatePerson(object sender, EventArgs e)
         {
             var p = (Person)((PersonListView)sender).DataGrid.SelectedItem;
-            ActivPerson = p;
-            Content.Children.Clear();
-            Content.Children.Add(CreatePersonView(p));
-            RemoveNewPersonButton();
+            ShowPersonView(p);
         }
 
         private void SwitchToAllPersons(object sender, EventArgs e)
         {
             ShowAllPersons();
+        }
+
+        private void ShowUpdatePersonFromTableView(object sender, EventArgs e)
+        {
+            var p = ((TischView) sender).ClickedPerson;
+            ShowPersonView(p);
+        }
+
+        private void ShowPersonView(Person p)
+        {
+            ActivPerson = p;
+            Content.Children.Clear();
+            Content.Children.Add(CreatePersonView(p));
+            RemoveNewPersonButton();
         }
 
         private void ShowAllPersons()
@@ -142,8 +155,6 @@ namespace M120_LB2NH_FS17
             view.PersonViewEnded += SwitchToAllPersons;
 
             if (p == null) return view;
-
-            //done
 
             view.txtAnrede.Text = p.Anrede;
             view.txtFirma.Text = p.Firma;
@@ -189,15 +200,18 @@ namespace M120_LB2NH_FS17
             return bt;
         }
 
-        private Tischordnung CreateTischOrdnungsView()
+        private Tischordnung CreateTischOrdnungsView(int id = 1)
         {
-            return new Tischordnung
+            var tischordnung = new Tischordnung(Bibliothek.Veranstaltung_nach_ID(id))
             {
+                HorizontalAlignment = HorizontalAlignment.Stretch,
                 VerticalAlignment = VerticalAlignment.Stretch,
-                HorizontalAlignment = HorizontalAlignment.Stretch
+                Margin = new Thickness(0,0,0,0)
             };
-        }
 
+            tischordnung.ChairClicked += ShowUpdatePersonFromTableView;
+            return tischordnung;
+        }
 
     }
 }

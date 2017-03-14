@@ -1,5 +1,7 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using System;
+using System.Linq;
+using System.Windows;
+using System.Windows.Media;
 using System.Windows.Shapes;
 
 namespace M120_LB2NH_FS17
@@ -7,38 +9,79 @@ namespace M120_LB2NH_FS17
     /// <summary>
     /// Interaktionslogik für TischView.xaml
     /// </summary>
-    public partial class TischView : UserControl
+    public partial class TischView
     {
-        private int _distFromTable = 20;
-        public TischView()
+        public Tisch TischObject { get; }
+        public EventHandler ClickOnChair; 
+        public Person ClickedPerson { get; private set; }
+        public TischView(Tisch t)
         {
+            TischObject = t;
             InitializeComponent();
-            GenerateChairs(2);
+            DrawChairs();
         }
 
-        private void GenerateChairs(int amount)
+        private void DrawChairs()
         {
-            var centerPoint = tisch.RenderTransformOrigin;
-            var counter = amount;
-            for (int i = 0; i < amount; i++)
-            {
-                var pos = GetChairPos(counter, i + 1);
+            var angle = 360/TischObject.MaximaleAnzahlPersonen;
 
+            var line = new Line
+            {
+                X1 = 0,
+                Y1 = 0,
+                Y2 = 100,
+                X2 = 0
+            };
+
+            var rotatetrans = new RotateTransform(0);
+            
+
+            for (int i = 0; i < TischObject.MaximaleAnzahlPersonen; i++)
+            {
+                line.RenderTransform = rotatetrans;
+                var chairPos = rotatetrans.Transform(new Point(line.X2, line.Y2));
+                var personName = GetPersonName(i + 1);
+                personName = string.IsNullOrEmpty(personName) ? "Nicht besetzt" : personName;
                 var chair = new Ellipse
                 {
-                    Width = 10,
-                    Height = 10
+                    Height = 20,
+                    Width = 20,
+                    Margin = new Thickness(chairPos.X, chairPos.Y, 0, 0),
+                    Fill = new SolidColorBrush(Colors.Brown),
+                    ToolTip = i+1 + ", " + personName
                 };
-                //var location = chair.PointToScreen(new Point(0,0));
 
-                counter--;
+                chair.MouseUp += Chair_MouseUp;
+
+                main.Children.Add(chair);
+
+                rotatetrans.Angle += angle;
             }
 
         }
 
-        private Point GetChairPos(int amount, int amountused)
+        private void Chair_MouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            return new Point((tisch.Height / 2) / amount, (tisch.Width / 2) / amountused);
+            var tooltip = ((Ellipse) sender).ToolTip.ToString();
+            int chairId;
+            int.TryParse(tooltip.Substring(0, 1), out chairId);
+
+            var p = GetPersonOnChair(chairId);
+
+            if (p == null) return;
+
+            ClickedPerson = p;
+            ClickOnChair?.Invoke(this, e);
+        }
+
+        private string GetPersonName(int platz)
+        {
+           return (from p in TischObject.Personen where p.Platz == platz select p.Name).FirstOrDefault();
+        }
+
+        private Person GetPersonOnChair(int chair)
+        {
+            return (from p in TischObject.Personen where p.Platz == chair select p).FirstOrDefault();
         }
     }
 }

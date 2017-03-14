@@ -5,22 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:M120_LB2NH_FS17"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="800
-             ">
-    <Grid>
-        <Grid HorizontalAlignment="Stretch" Height="48" VerticalAlignment="Top">
-            <Label x:Name="labelAnzahlTische" Content="Anzahl Tische" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="77" FontSize="11"/>
-            <TextBox x:Name="textBoxAnzahlTische" HorizontalAlignment="Left" Height="23" Margin="34,25,0,0" TextWrapping="Wrap" Text="6" VerticalAlignment="Top" Width="27"/>
-            <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Left" Height="48" Margin="82,0,0,0" VerticalAlignment="Top" Width="5"/>
-            <Label x:Name="labelMaxAnzahlPersonen" Content="Maximale Anzahl Personen" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="139" FontSize="11" Margin="87,0,0,0"/>
-            <TextBox x:Name="textBoxMaxAnzahlPersonen" HorizontalAlignment="Left" Height="23" Margin="141,25,0,0" TextWrapping="Wrap" Text="12" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.091,0.433"/>
-            <GridSplitter x:Name="gridSplitter2" HorizontalAlignment="Left" Height="48" Margin="231,0,0,0" VerticalAlignment="Top" Width="5"/>
-            <Label x:Name="labelPerson" Content="Person" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="65" FontSize="11" Margin="270,0,0,0"/>
-            <ComboBox x:Name="comboBoxPersonen" HorizontalAlignment="Left" Margin="241,25,0,0" VerticalAlignment="Top" Width="120"/>
+             d:DesignHeight="300" d:DesignWidth="800">
+    <Grid RenderTransformOrigin="0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid HorizontalAlignment="Stretch" Margin="0,0,0,256" VerticalAlignment="Stretch">
+            <ComboBox x:Name="cbTische" HorizontalAlignment="Left" Margin="60,10,0,0" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lblTische" Content="Tische" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblPlaetze" Content="Plätze" HorizontalAlignment="Left" Margin="210,10,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="cbPlaetze" HorizontalAlignment="Left" Margin="257,10,0,0" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="btnSave" Content="Speichern" HorizontalAlignment="Left" Margin="397,10,0,0" VerticalAlignment="Top" Width="75" Click="btnSave_Click"/>
         </Grid>
-        <Grid HorizontalAlignment="Stretch" Margin="0,48,0,0" VerticalAlignment="Stretch">
-            <local:TischView HorizontalAlignment="Left" Margin="109,61,0,0" VerticalAlignment="Top"/>
-        </Grid>
-
+        <Grid x:Name="main" HorizontalAlignment="Stretch" Margin="0,44,0,0" VerticalAlignment="Stretch"/>
     </Grid>
 </UserControl>

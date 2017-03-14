@@ -6,8 +6,7 @@
              xmlns:local="clr-namespace:M120_LB2NH_FS17"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Ellipse x:Name="tisch" Fill="#61210B" HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100"/>
-
+    <Grid x:Name="main" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Ellipse x:Name="tisch" Fill="#61210B" HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Margin="0,0,0,0"/>
     </Grid>
 </UserControl>
