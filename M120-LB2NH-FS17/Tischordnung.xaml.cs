@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows;
-using System.Xml.Serialization;
 
 namespace M120_LB2NH_FS17
 {
@@ -15,10 +14,10 @@ namespace M120_LB2NH_FS17
         {
             _currVeranstaltung = v;
             InitializeComponent();
-            cbTische.ItemsSource = new[] {1, 2, 3, 4, 5, 6};
-            cbPlaetze.ItemsSource = new[] {1, 2, 3, 4, 5, 6};
+            cbTische.ItemsSource = new[] { 1, 2, 3, 4, 5, 6 };
+            cbPlaetze.ItemsSource = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
             cbTische.SelectedIndex = _currVeranstaltung.Tische.Count - 1;
-            cbPlaetze.SelectedIndex = _currVeranstaltung.Tische[0].MaximaleAnzahlPersonen -1;
+            cbPlaetze.SelectedIndex = _currVeranstaltung.Tische[0].MaximaleAnzahlPersonen - 1;
             InitTablesView();
         }
 
@@ -56,7 +55,31 @@ namespace M120_LB2NH_FS17
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            var anzahlTische = cbTische.SelectedIndex + 1;
+            var maxAnzahlPersonen = cbPlaetze.SelectedIndex + 1;
+            var currAnzahlTische = _currVeranstaltung.Tische.Count;
 
+            if (currAnzahlTische < anzahlTische)
+            {
+                for (int i = 0; i < anzahlTische-currAnzahlTische; i++)
+                {
+                    var tisch = new Tisch()
+                    {
+                        ID = 0,
+                        MaximaleAnzahlPersonen = maxAnzahlPersonen,
+                        Veranstaltung = _currVeranstaltung
+                    };
+                    Bibliothek.Tisch_neu(tisch);
+                }
+                
+            }
+
+            foreach (var tisch in _currVeranstaltung.Tische)
+            {
+                tisch.MaximaleAnzahlPersonen = maxAnzahlPersonen;
+            }
+
+            InitTablesView();
         }
     }
 }

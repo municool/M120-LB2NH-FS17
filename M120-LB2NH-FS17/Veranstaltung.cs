@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents.DocumentStructures;
 
 namespace M120_LB2NH_FS17
 {
@@ -19,7 +20,7 @@ namespace M120_LB2NH_FS17
 
         public override string ToString()
         {
-            return ID.ToString();
+            return Name;
         }
     }
 }

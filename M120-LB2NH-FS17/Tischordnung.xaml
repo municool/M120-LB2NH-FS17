@@ -14,6 +14,6 @@
             <ComboBox x:Name="cbPlaetze" HorizontalAlignment="Left" Margin="257,10,0,0" VerticalAlignment="Top" Width="120"/>
             <Button x:Name="btnSave" Content="Speichern" HorizontalAlignment="Left" Margin="397,10,0,0" VerticalAlignment="Top" Width="75" Click="btnSave_Click"/>
         </Grid>
-        <Grid x:Name="main" HorizontalAlignment="Stretch" Margin="0,44,0,0" VerticalAlignment="Stretch"/>
+        <Grid x:Name="main" HorizontalAlignment="Stretch" Margin="0,44,0,0" VerticalAlignment="Stretch" RenderTransformOrigin="0,0"/>
     </Grid>
 </UserControl>

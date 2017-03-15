@@ -16,8 +16,8 @@ namespace M120_LB2NH_FS17
         {
             InitializeComponent();
             DatenBereitstellen();
-            comboBoxVeranstaltungen.ItemsSource = Bibliothek.Veranstaltungen_Alle();
-            comboBoxVeranstaltungen.SelectedIndex = 0;
+            cbVeranstaltungen.ItemsSource = Bibliothek.Veranstaltungen_Alle();
+           cbVeranstaltungen.SelectedIndex = 0;
 
         }
         #region Demodaten
@@ -200,9 +200,9 @@ namespace M120_LB2NH_FS17
             return bt;
         }
 
-        private Tischordnung CreateTischOrdnungsView(int id = 1)
+        private Tischordnung CreateTischOrdnungsView()
         {
-            var tischordnung = new Tischordnung(Bibliothek.Veranstaltung_nach_ID(id))
+            var tischordnung = new Tischordnung(Bibliothek.Veranstaltung_nach_ID(1))
             {
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 VerticalAlignment = VerticalAlignment.Stretch,

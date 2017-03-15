@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -47,8 +48,14 @@ namespace M120_LB2NH_FS17
             }
 
             int placeIndex;
-            if (int.TryParse(place, out placeIndex) && placeIndex <= tisch.MaximaleAnzahlPersonen)
-                person.Platz = placeIndex;
+            if (int.TryParse(place, out placeIndex) && placeIndex <= tisch.MaximaleAnzahlPersonen && placeIndex > 0)
+                if (GetPersonOnChair(tisch, placeIndex) == null)
+                    person.Platz = placeIndex;
+                else
+                {
+                    ShowError("Dieser Platz ist schon vergeben!");
+                    return;
+                }
             else
             {
                 ShowError("Bitte geben Sie ein Zahl ein die kleiner \noder gleich wie die Maximalzahl ist!");
@@ -85,6 +92,11 @@ namespace M120_LB2NH_FS17
             lblErrorBox.Background = System.Windows.Media.Brushes.Red;
             lblErrorBox.Content = message;
             lblErrorBox.Visibility = Visibility.Visible;
+        }
+
+        private Person GetPersonOnChair(Tisch t, int chairId)
+        {
+            return (from p in t.Personen where p.Platz == chairId select p).FirstOrDefault();
         }
     }
 }

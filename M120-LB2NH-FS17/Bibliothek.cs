@@ -63,6 +63,11 @@ namespace M120_LB2NH_FS17
         {
             return (from element in Tische where element.ID == id select element).FirstOrDefault();
         }
+
+        public static Person PersonOnChair(Tisch t, int chair)
+        {
+            return null;
+        }
         #endregion
         #region Person
         public static Int32 Person_neu(Person p)
