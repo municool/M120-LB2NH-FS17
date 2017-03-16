@@ -46,7 +46,6 @@ C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\Per
 C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\Tischordnung.g.cs
 C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\TischView.g.cs
 C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\App.g.cs
-C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\M120-LB2NH-FS17_MarkupCompile.cache
 C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\M120-LB2NH-FS17_MarkupCompile.lref
 C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\MainWindow.baml

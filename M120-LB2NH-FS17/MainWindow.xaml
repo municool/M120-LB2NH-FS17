@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:M120_LB2NH_FS17"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="725">
+        Title="MainWindow" Height="500" Width="1000"
+        ResizeMode="NoResize">
     <Grid>
         <Grid x:Name="NavigationGrid" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Width="110">
             <ComboBox x:Name="cbVeranstaltungen" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="90" ItemsSource="{Binding}"/>

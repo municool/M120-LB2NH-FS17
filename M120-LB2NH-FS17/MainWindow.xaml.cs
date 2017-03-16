@@ -41,7 +41,7 @@ namespace M120_LB2NH_FS17
             tisch1.Veranstaltung = Bibliothek.Veranstaltung_nach_ID(1);
             Bibliothek.Tisch_neu(tisch1);
             Tisch tisch2 = new Tisch();
-            tisch2.MaximaleAnzahlPersonen = 3;
+            tisch2.MaximaleAnzahlPersonen = 4;
             tisch2.Veranstaltung = Bibliothek.Veranstaltung_nach_ID(1);
             Bibliothek.Tisch_neu(tisch2);
         }
@@ -78,6 +78,46 @@ namespace M120_LB2NH_FS17
             person4.Name = "Cuenet Fred";
             person4.Tisch = Bibliothek.Tisch_nach_ID(2);
             Bibliothek.Person_neu(person4);
+
+            Person person5 = new Person
+            {
+                Anrede = "Herr",
+                Firma = "Test Inc.",
+                Name = "Fritz Klaus",
+                Geburtsdatum = new DateTime(1966, 6, 2),
+                Tisch = Bibliothek.Tisch_nach_ID(2)
+            };
+            Bibliothek.Person_neu(person5);
+
+            Person person6 = new Person
+            {
+                Anrede = "Herr",
+                Firma = "Test Inc.",
+                Name = "Hans-Peter Kneubuehl",
+                Geburtsdatum = new DateTime(1952, 8, 12),
+                Tisch = Bibliothek.Tisch_nach_ID(2)
+            };
+            Bibliothek.Person_neu(person6);
+
+            Person person7 = new Person
+            {
+                Anrede = "Frau",
+                Firma = "Test Inc.",
+                Name = "Ursula Klaus",
+                Geburtsdatum = new DateTime(1968, 9, 8),
+                Tisch = Bibliothek.Tisch_nach_ID(2)
+            };
+            Bibliothek.Person_neu(person7);
+
+            Person person8 = new Person
+            {
+                Anrede = "Frau",
+                Firma = "Test Inc.",
+                Name = "Petra Kneubuehl",
+                Geburtsdatum = new DateTime(1955, 7, 10),
+                Tisch = Bibliothek.Tisch_nach_ID(2)
+            };
+            Bibliothek.Person_neu(person8);
 
         }
         #endregion
@@ -153,6 +193,7 @@ namespace M120_LB2NH_FS17
             };
 
             view.PersonViewEnded += SwitchToAllPersons;
+            view.lblUpdate.Content = "false";
 
             if (p == null) return view;
 

@@ -30,7 +30,7 @@ namespace M120_LB2NH_FS17
         private void DrawTables()
         {
             var top = -200;
-            var left = -300;
+            var left = -500;
 
             for (int i = 0; i < _currVeranstaltung.Tische.Count; i++)
             {
