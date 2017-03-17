@@ -96,17 +96,18 @@ namespace M120_LB2NH_FS17
             return (from element in Personen where element.ID == id select element).FirstOrDefault();
         }
 
-        public static void UpdatePerson(Person p)
+        public static void UpdatePerson(Person p, Tisch oldTisch)
         {
-            var index = Personen.IndexOf(p);
+            var currPerson = Person_nach_ID(p.ID);
+            var index = Personen.IndexOf(currPerson);
 
             if (index == 0) return;
 
-            var curPerson = Personen[index];
-            if (curPerson.Tisch != p.Tisch)
+            if (oldTisch != p.Tisch && oldTisch != null)
             {
                 p.Tisch.Personen.Add(p);
-                curPerson.Tisch.Personen.Remove(curPerson);
+                //löschen der person auf dem alten tisch
+                oldTisch.Personen.Remove(p);
             }
 
             Personen[index] = p;

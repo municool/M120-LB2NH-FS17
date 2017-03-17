@@ -27,11 +27,15 @@ namespace M120_LB2NH_FS17
             var tisch = (Tisch)cbTisch.SelectionBoxItem;
             var place = txtChair.Text;
             var isUpdate = lblUpdate.Content.Equals("true");
+            Tisch currTisch = null;
 
             var person = new Person();
 
             if (isUpdate)
+            {
                 person = Bibliothek.Person_nach_ID(MainWindow.ActivPerson.ID);
+                currTisch = person.Tisch;
+            }
 
             if (anrede != "" && firma != "" && nameofPerson != "" && tisch != null && geburtsdatum != null)
             {
@@ -63,7 +67,8 @@ namespace M120_LB2NH_FS17
             }
 
             if (isUpdate)
-                Bibliothek.UpdatePerson(person);
+                //übergen des alten tisches um die person auf dem alten tisch zulöschen
+                Bibliothek.UpdatePerson(person, currTisch);
             else
                 Bibliothek.Person_neu(person);
 
