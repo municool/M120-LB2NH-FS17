@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -64,7 +65,8 @@ namespace M120_LB2NH_FS17
         {
             var tooltip = ((Ellipse) sender).ToolTip.ToString();
             int chairId;
-            int.TryParse(tooltip.Substring(0, 1), out chairId);
+            var chairIdString = Regex.Match(tooltip, @"\d+").ToString();
+            int.TryParse(chairIdString, out chairId);
 
             var p = GetPersonOnChair(chairId);
 
