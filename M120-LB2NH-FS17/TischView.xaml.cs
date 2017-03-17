@@ -10,11 +10,15 @@ namespace M120_LB2NH_FS17
     /// <summary>
     /// Interaktionslogik für TischView.xaml
     /// </summary>
+    /// 
+    /// erstellt am 11.3.2017, Aufwand 150 Min, erstellen des Grundgerüsts + Zeichnen der Stühle (Uhrzeiger)
     public partial class TischView
     {
         public Tisch TischObject { get; }
         public EventHandler ClickOnChair; 
         public Person ClickedPerson { get; private set; }
+        
+        /// Konstruktor
         public TischView(Tisch t)
         {
             TischObject = t;
@@ -22,6 +26,8 @@ namespace M120_LB2NH_FS17
             DrawChairs();
         }
 
+        /// Zeichnet die Stühle mithilfe eines Rotators im 
+        /// entspechend kalkuliertem winkel um den Tisch herum
         private void DrawChairs()
         {
             var angle = 360/TischObject.MaximaleAnzahlPersonen;
@@ -60,6 +66,7 @@ namespace M120_LB2NH_FS17
             }
 
         }
+
 
         private void Chair_MouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {

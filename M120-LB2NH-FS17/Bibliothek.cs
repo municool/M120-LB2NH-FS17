@@ -96,6 +96,7 @@ namespace M120_LB2NH_FS17
             return (from element in Personen where element.ID == id select element).FirstOrDefault();
         }
 
+        // erstellt am 5.3.2017, Aufwand 60 Min, update methode für die Person)
         public static void UpdatePerson(Person p, Tisch oldTisch)
         {
             var currPerson = Person_nach_ID(p.ID);

@@ -7,18 +7,23 @@ namespace M120_LB2NH_FS17
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
+    /// 
+    /// erstellt am 4.3.2017, Aufwand 30 Min, ertellen des Grundgerüsts + Navigationspunkte
+    /// bearbeitet am 5.3.2017, Aufwand 60 Min, ertellen der Methoden für die PersonListView + PersonView (update und new)
+
+
     public partial class MainWindow
     {
         private Button _newPersonButton;
         public static Person ActivPerson { get; private set; }
 
+        /// Konstruktor
         public MainWindow()
         {
             InitializeComponent();
             DatenBereitstellen();
             cbVeranstaltungen.ItemsSource = Bibliothek.Veranstaltungen_Alle();
-           cbVeranstaltungen.SelectedIndex = 0;
-
+            cbVeranstaltungen.SelectedIndex = 0;
         }
         #region Demodaten
         private void DatenBereitstellen()
@@ -122,38 +127,50 @@ namespace M120_LB2NH_FS17
         }
         #endregion
 
+        /// Navigationspunkt listener
         private void btnAllPersons_Click(object sender, RoutedEventArgs e)
         {
             ShowAllPersons();
         }
 
+        /// Navigationspunkt listener
         private void btnNewPerson_Click(object sender, RoutedEventArgs e)
         {
             Content.Children.Clear();
             Content.Children.Add(CreatePersonView());
         }
+
+        /// Navigationspunkt listener
         private void btnTableView_Click(object sender, RoutedEventArgs e)
         {
             ShowTableView();
         }
 
+        /// Vorbereitung für eine PersonView mit ausgewählte person (update modus)
         private void ShowUpdatePerson(object sender, EventArgs e)
         {
             var p = (Person)((PersonListView)sender).DataGrid.SelectedItem;
             ShowPersonView(p);
         }
 
+        /// Vorbereitung um auf die PersonListView zu wechseln
         private void SwitchToAllPersons(object sender, EventArgs e)
         {
             ShowAllPersons();
         }
 
+        /// Vorbereitung um von der TischView auf die PersonView zu wechseln 
+        /// mit ausgewählte person (update modus)
         private void ShowUpdatePersonFromTableView(object sender, EventArgs e)
         {
             var p = ((TischView) sender).ClickedPerson;
             ShowPersonView(p);
         }
 
+        /// entfernt die bestehende PersonView und 
+        /// bereitet das erstellen der neuen vor 
+        /// mit der mitgegebenen Person (update modus)
+        /// Blendet den Button new Person aus
         private void ShowPersonView(Person p)
         {
             ActivPerson = p;
@@ -162,6 +179,8 @@ namespace M120_LB2NH_FS17
             RemoveNewPersonButton();
         }
 
+        /// Erstellt eine PersonListView 
+        /// Blendet den New Person Button wieder ein
         private void ShowAllPersons()
         {
             Content.Children.Clear();
@@ -172,10 +191,12 @@ namespace M120_LB2NH_FS17
             NavigationGrid.Children.Add(_newPersonButton);
         }
 
+        /// Entfernt den Bereits Exsitierenden Button _newPersonButton
         private void RemoveNewPersonButton()
         {
             NavigationGrid.Children.Remove(_newPersonButton);
         }
+
 
         private void ShowTableView()
         {
@@ -184,6 +205,10 @@ namespace M120_LB2NH_FS17
             RemoveNewPersonButton();
         }
 
+        /// Erstellt eine PersonView mit der mitgegebenen Person 
+        /// (kann auch null sein) (update oder neu modus)
+        /// falls die Person mitgegeben wird, werden die 
+        /// Parameter gesetzt+ das Label auf true
         private PersonView CreatePersonView(Person p = null)
         {
             var view = new PersonView
@@ -208,6 +233,9 @@ namespace M120_LB2NH_FS17
 
             return view;
         }
+
+        /// Erstellt eine neue PersonListView
+        /// + EventHandler
         private PersonListView CreatePersonListView()
         {
             var personList = new PersonListView
@@ -216,7 +244,6 @@ namespace M120_LB2NH_FS17
                 Name = "plvPersons",
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 Margin = new Thickness(0, 0, 0, 0)
-
             };
 
             personList.UpdatePerson += ShowUpdatePerson;
@@ -224,6 +251,8 @@ namespace M120_LB2NH_FS17
             return personList;
         }
 
+        /// Erstellt einen Button damit man eine Neue Person Hinzufügen kann
+        ///  + EventHandler
         private Button CreateNewPersonButton()
         {
             var bt = new Button
@@ -241,6 +270,8 @@ namespace M120_LB2NH_FS17
             return bt;
         }
 
+        /// Erstellt eine neue TischOrdnungsView
+        /// + EventHandler auf den Stühlen welcher die einzelansicht aufruft (update)
         private Tischordnung CreateTischOrdnungsView()
         {
             var tischordnung = new Tischordnung(Bibliothek.Veranstaltung_nach_ID(1))

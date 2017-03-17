@@ -8,16 +8,26 @@ namespace M120_LB2NH_FS17
     /// <summary>
     /// Interaktionslogik für PersonView.xaml
     /// </summary>
+    ///
+    /// erstellt am 5.3.2017, Aufwand 40 Min, ertellen des Grundgerüsts + Felder und Buttons
+    /// 
     public partial class PersonView
     {
         public event EventHandler PersonViewEnded;
 
+        /// Konstruktor
         public PersonView()
         {
             InitializeComponent();
             cbVeranstalltung.ItemsSource = Bibliothek.Veranstaltungen_Alle();
         }
 
+        /// Button listener zum Speichern 
+        /// hohlt alle inhalte der felder 
+        /// prüft ob es sich um ein Update handelt oder nicht
+        /// wenn ja hohlen der existierenden Person + abfüllen der neuen Daten(falls korrekt)
+        /// update funktion einleiten.
+        /// wenn nein eine neue Person erstellen
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             var anrede = txtAnrede.Text;
@@ -75,23 +85,27 @@ namespace M120_LB2NH_FS17
             PersonViewEnded?.Invoke(this, e);
         }
 
+        /// Button listener zum Abbrechen
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             PersonViewEnded?.Invoke(this, e);
         }
 
+        /// ComboBox listener um Veranstalltung zukünftig zu wechseln
         private void cbVeranstalltung_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             cbTisch.ItemsSource = ((Veranstaltung)((ComboBox)sender).SelectedItem).Tische;
 
         }
 
+        /// ComboBox listener um die Maximale anzahl Tische zus setzen
         private void cbTisch_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var table = (Tisch)((ComboBox)sender).SelectedItem;
             lblMaxChairs.Content = table.MaximaleAnzahlPersonen.ToString();
         }
 
+        /// Error anzeigen
         private void ShowError(string message)
         {
             lblErrorBox.Background = System.Windows.Media.Brushes.Red;
@@ -99,6 +113,8 @@ namespace M120_LB2NH_FS17
             lblErrorBox.Visibility = Visibility.Visible;
         }
 
+        /// Linq methode um herauszufinden ob an dem 
+        /// gewählten stuhl des gewählten Tisches jemand sitzt.
         private Person GetPersonOnChair(Tisch t, int chairId)
         {
             return (from p in t.Personen where p.Platz == chairId select p).FirstOrDefault();

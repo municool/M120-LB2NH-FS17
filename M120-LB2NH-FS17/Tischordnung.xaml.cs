@@ -6,10 +6,17 @@ namespace M120_LB2NH_FS17
     /// <summary>
     /// Interaktionslogik für Tischordnung.xaml
     /// </summary>
+    /// 
+    /// erstellt am 10.3.2017, Aufwand 30 Min, ertellen des Grundgerüsts
+    /// bearbeitet am 11.3.2017, Aufwand 120 Min, bearbeiten der Ansicht ertellen des Tisches
+    /// bearbeitet am 17.3.2017, Aufwand 60 Min, bearbeiten des Tisches + Ausrichtung
+
     public partial class Tischordnung
     {
         private Veranstaltung _currVeranstaltung;
         public EventHandler ChairClicked;
+
+        /// Konstruktor
         public Tischordnung(Veranstaltung v)
         {
             _currVeranstaltung = v;
@@ -21,12 +28,15 @@ namespace M120_LB2NH_FS17
             InitTablesView();
         }
 
+        /// löscht alle elemente + Zeichnet die Tische neu
         private void InitTablesView()
         {
             main.Children.Clear();
             DrawTables();
         }
 
+        /// Zeichnet die gewählten Tische neu in einer schräg 
+        /// zueinanderliegenden Position
         private void DrawTables()
         {
             var top = -200;
