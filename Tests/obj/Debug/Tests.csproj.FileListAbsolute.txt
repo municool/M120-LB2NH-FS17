@@ -3,3 +3,8 @@ C:\Users\lhe\Documents\GitHub\Projekt swini\M120-LB2NH-FS17\Tests\bin\Debug\Test
 C:\Users\lhe\Documents\GitHub\Projekt swini\M120-LB2NH-FS17\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
 C:\Users\lhe\Documents\GitHub\Projekt swini\M120-LB2NH-FS17\Tests\obj\Debug\Tests.dll
 C:\Users\lhe\Documents\GitHub\Projekt swini\M120-LB2NH-FS17\Tests\obj\Debug\Tests.pdb
+C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\Tests\bin\Debug\Tests.dll
+C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\Tests\bin\Debug\Tests.pdb
+C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
+C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\Tests\obj\Debug\Tests.dll
+C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\Tests\obj\Debug\Tests.pdb

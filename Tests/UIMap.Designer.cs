@@ -290,6 +290,120 @@ namespace Tests
             Mouse.Click(uITischordnungButton, new Point(67, 10));
         }
         
+        /// <summary>
+        /// Test3 - Use 'Test3Params' to pass parameters into this method.
+        /// </summary>
+        public void Test3()
+        {
+            #region Variable Declarations
+            WpfButton uITischordnungButton = this.UIMainWindowWindow.UITischordnungButton;
+            WpfCustom uIItemCustom = this.UIMainWindowWindow.UIItemCustom8.UISpeichernButton.UIItemCustom;
+            WpfListItem uIItem5ListItem = this.UIMainWindowWindow.UIItem5ListItem;
+            WpfCustom uIItemCustom1 = this.UIMainWindowWindow.UIItemCustom8.UISpeichernButton.UIItemCustom1;
+            WpfText uIHerrText = this.UIMainWindowWindow.UIPlvPersonsCustom.UIDataGridTable.UIItem1Row.UIHerrCell.UIHerrText;
+            WpfEdit uITxtChairEdit = this.UIMainWindowWindow.UIItemCustom.UITxtChairEdit;
+            WpfButton uISpeichernButton = this.UIMainWindowWindow.UIItemCustom.UISpeichernButton;
+            WpfText uIFrauText = this.UIMainWindowWindow.UIPlvPersonsCustom1.UIDataGridTable.UIItem2Row.UIFrauCell.UIFrauText;
+            WpfEdit uITxtChairEdit1 = this.UIMainWindowWindow.UIItemCustom1.UITxtChairEdit;
+            WpfButton uISpeichernButton1 = this.UIMainWindowWindow.UIItemCustom1.UISpeichernButton;
+            WpfText uIHerrText1 = this.UIMainWindowWindow.UIPlvPersonsCustom2.UIDataGridTable.UIItem3Row.UIHerrCell.UIHerrText;
+            WpfEdit uITxtChairEdit2 = this.UIMainWindowWindow.UIItemCustom2.UITxtChairEdit;
+            WpfButton uISpeichernButton2 = this.UIMainWindowWindow.UIItemCustom2.UISpeichernButton;
+            WpfText uIHerrText2 = this.UIMainWindowWindow.UIPlvPersonsCustom3.UIDataGridTable.UIItem4Row.UIHerrCell.UIHerrText;
+            WpfEdit uITxtChairEdit3 = this.UIMainWindowWindow.UIItemCustom3.UITxtChairEdit;
+            WpfButton uISpeichernButton3 = this.UIMainWindowWindow.UIItemCustom3.UISpeichernButton;
+            WpfText uIHerrText3 = this.UIMainWindowWindow.UIPlvPersonsCustom4.UIDataGridTable.UIItem5Row.UIHerrCell.UIHerrText;
+            WpfEdit uITxtChairEdit4 = this.UIMainWindowWindow.UIItemCustom4.UITxtChairEdit;
+            WpfButton uISpeichernButton4 = this.UIMainWindowWindow.UIItemCustom4.UISpeichernButton;
+            WpfText uIHerrText4 = this.UIMainWindowWindow.UIPlvPersonsCustom5.UIDataGridTable.UIItem6Row.UIHerrCell.UIHerrText;
+            WpfEdit uITxtChairEdit5 = this.UIMainWindowWindow.UIItemCustom5.UITxtChairEdit;
+            WpfButton uISpeichernButton5 = this.UIMainWindowWindow.UIItemCustom5.UISpeichernButton;
+            WpfCustom uIItemCustom2 = this.UIMainWindowWindow.UIItemCustom9.UISpeichernButton.UIItemCustom;
+            WpfListItem uIItem2ListItem = this.UIMainWindowWindow.UIItem2ListItem;
+            #endregion
+
+            // Click 'Tischordnung' button
+            Mouse.Click(uITischordnungButton, new Point(80, 7));
+
+            // Click first custom control next to 'Speichern' button
+            Mouse.Click(uIItemCustom, new Point(977, 232));
+
+            // Click '5' list item
+            Mouse.Click(uIItem5ListItem, new Point(44, 7));
+
+            // Click first custom control next to 'Speichern' button
+            Mouse.Click(uIItemCustom, new Point(1139, 226));
+
+            // Click first custom control next to 'Speichern' button
+            Mouse.Click(uIItemCustom1, new Point(601, 304));
+
+            // Double-Click 'Herr' label
+            Mouse.DoubleClick(uIHerrText, new Point(141, 9));
+
+            // Type '1' in 'txtChair' text box
+            uITxtChairEdit.Text = this.Test3Params.UITxtChairEditText;
+
+            // Click 'Speichern' button
+            Mouse.Click(uISpeichernButton, new Point(133, 17));
+
+            // Double-Click 'Frau' label
+            Mouse.DoubleClick(uIFrauText, new Point(26, 14));
+
+            // Type '2' in 'txtChair' text box
+            uITxtChairEdit1.Text = this.Test3Params.UITxtChairEditText1;
+
+            // Click 'Speichern' button
+            Mouse.Click(uISpeichernButton1, new Point(62, 19));
+
+            // Double-Click 'Herr' label
+            Mouse.DoubleClick(uIHerrText1, new Point(22, 11));
+
+            // Type '3' in 'txtChair' text box
+            uITxtChairEdit2.Text = this.Test3Params.UITxtChairEditText2;
+
+            // Click 'Speichern' button
+            Mouse.Click(uISpeichernButton2, new Point(119, 20));
+
+            // Double-Click 'Herr' label
+            Mouse.DoubleClick(uIHerrText2, new Point(19, 12));
+
+            // Type '1' in 'txtChair' text box
+            uITxtChairEdit3.Text = this.Test3Params.UITxtChairEditText3;
+
+            // Click 'Speichern' button
+            Mouse.Click(uISpeichernButton3, new Point(45, 9));
+
+            // Double-Click 'Herr' label
+            Mouse.DoubleClick(uIHerrText3, new Point(23, 14));
+
+            // Type '2' in 'txtChair' text box
+            uITxtChairEdit4.Text = this.Test3Params.UITxtChairEditText4;
+
+            // Click 'Speichern' button
+            Mouse.Click(uISpeichernButton4, new Point(67, 20));
+
+            // Double-Click 'Herr' label
+            Mouse.DoubleClick(uIHerrText4, new Point(18, 9));
+
+            // Type '3' in 'txtChair' text box
+            uITxtChairEdit5.Text = this.Test3Params.UITxtChairEditText5;
+
+            // Click 'Speichern' button
+            Mouse.Click(uISpeichernButton5, new Point(86, 22));
+
+            // Click 'Tischordnung' button
+            Mouse.Click(uITischordnungButton, new Point(58, 10));
+
+            // Click first custom control next to 'Speichern' button
+            Mouse.Click(uIItemCustom2, new Point(1077, 225));
+
+            // Click '2' list item
+            Mouse.Click(uIItem2ListItem, new Point(94, 17));
+
+            // Click first custom control next to 'Speichern' button
+            Mouse.Click(uIItemCustom2, new Point(1176, 227));
+        }
+        
         #region Properties
         public virtual Test1Params Test1Params
         {
@@ -315,6 +429,18 @@ namespace Tests
             }
         }
         
+        public virtual Test3Params Test3Params
+        {
+            get
+            {
+                if ((this.mTest3Params == null))
+                {
+                    this.mTest3Params = new Test3Params();
+                }
+                return this.mTest3Params;
+            }
+        }
+        
         public UIMainWindowWindow UIMainWindowWindow
         {
             get
@@ -332,6 +458,8 @@ namespace Tests
         private Test1Params mTest1Params;
         
         private Testcase2Params mTestcase2Params;
+        
+        private Test3Params mTest3Params;
         
         private UIMainWindowWindow mUIMainWindowWindow;
         #endregion
@@ -449,6 +577,46 @@ namespace Tests
         /// Select '2' in 'cbTisch' combo box
         /// </summary>
         public string UICbTischComboBoxSelectedItem4 = "2";
+        #endregion
+    }
+    
+    /// <summary>
+    /// Parameters to be passed into 'Test3'
+    /// </summary>
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class Test3Params
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Type '1' in 'txtChair' text box
+        /// </summary>
+        public string UITxtChairEditText = "1";
+        
+        /// <summary>
+        /// Type '2' in 'txtChair' text box
+        /// </summary>
+        public string UITxtChairEditText1 = "2";
+        
+        /// <summary>
+        /// Type '3' in 'txtChair' text box
+        /// </summary>
+        public string UITxtChairEditText2 = "3";
+        
+        /// <summary>
+        /// Type '1' in 'txtChair' text box
+        /// </summary>
+        public string UITxtChairEditText3 = "1";
+        
+        /// <summary>
+        /// Type '2' in 'txtChair' text box
+        /// </summary>
+        public string UITxtChairEditText4 = "2";
+        
+        /// <summary>
+        /// Type '3' in 'txtChair' text box
+        /// </summary>
+        public string UITxtChairEditText5 = "3";
         #endregion
     }
     
@@ -753,6 +921,22 @@ namespace Tests
                 return this.mUIItemCustom61;
             }
         }
+        
+        public WpfListItem UIItem2ListItem
+        {
+            get
+            {
+                if ((this.mUIItem2ListItem == null))
+                {
+                    this.mUIItem2ListItem = new WpfListItem(this);
+                    #region Search Criteria
+                    this.mUIItem2ListItem.SearchProperties[WpfListItem.PropertyNames.Name] = "2";
+                    this.mUIItem2ListItem.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUIItem2ListItem;
+            }
+        }
         #endregion
         
         #region Fields
@@ -801,6 +985,8 @@ namespace Tests
         private UIItemCustom10 mUIItemCustom10;
         
         private UIItemCustom61 mUIItemCustom61;
+        
+        private WpfListItem mUIItem2ListItem;
         #endregion
     }
     
@@ -1625,12 +1811,26 @@ namespace Tests
                 return this.mUITsbeCell;
             }
         }
+        
+        public UIHerrCell2 UIHerrCell
+        {
+            get
+            {
+                if ((this.mUIHerrCell == null))
+                {
+                    this.mUIHerrCell = new UIHerrCell2(this);
+                }
+                return this.mUIHerrCell;
+            }
+        }
         #endregion
         
         #region Fields
         private WpfCell mUICuenetFredCell;
         
         private UITsbeCell mUITsbeCell;
+        
+        private UIHerrCell2 mUIHerrCell;
         #endregion
     }
     
@@ -1667,6 +1867,42 @@ namespace Tests
         
         #region Fields
         private WpfText mUITsbeText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class UIHerrCell2 : WpfCell
+    {
+        
+        public UIHerrCell2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfCell.PropertyNames.ColumnHeader] = "Anrede";
+            this.WindowTitles.Add("MainWindow");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfText UIHerrText
+        {
+            get
+            {
+                if ((this.mUIHerrText == null))
+                {
+                    this.mUIHerrText = new WpfText(this);
+                    #region Search Criteria
+                    this.mUIHerrText.SearchProperties[WpfText.PropertyNames.Name] = "Herr";
+                    this.mUIHerrText.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUIHerrText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfText mUIHerrText;
         #endregion
     }
     
@@ -1833,10 +2069,24 @@ namespace Tests
                 return this.mUITestIncCell;
             }
         }
+        
+        public UIHerrCell3 UIHerrCell
+        {
+            get
+            {
+                if ((this.mUIHerrCell == null))
+                {
+                    this.mUIHerrCell = new UIHerrCell3(this);
+                }
+                return this.mUIHerrCell;
+            }
+        }
         #endregion
         
         #region Fields
         private UITestIncCell mUITestIncCell;
+        
+        private UIHerrCell3 mUIHerrCell;
         #endregion
     }
     
@@ -1873,6 +2123,42 @@ namespace Tests
         
         #region Fields
         private WpfText mUITestIncText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class UIHerrCell3 : WpfCell
+    {
+        
+        public UIHerrCell3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfCell.PropertyNames.ColumnHeader] = "Anrede";
+            this.WindowTitles.Add("MainWindow");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfText UIHerrText
+        {
+            get
+            {
+                if ((this.mUIHerrText == null))
+                {
+                    this.mUIHerrText = new WpfText(this);
+                    #region Search Criteria
+                    this.mUIHerrText.SearchProperties[WpfText.PropertyNames.Name] = "Herr";
+                    this.mUIHerrText.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUIHerrText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfText mUIHerrText;
         #endregion
     }
     
@@ -2039,10 +2325,24 @@ namespace Tests
                 return this.mUITestIncCell;
             }
         }
+        
+        public UIHerrCell4 UIHerrCell
+        {
+            get
+            {
+                if ((this.mUIHerrCell == null))
+                {
+                    this.mUIHerrCell = new UIHerrCell4(this);
+                }
+                return this.mUIHerrCell;
+            }
+        }
         #endregion
         
         #region Fields
         private UITestIncCell1 mUITestIncCell;
+        
+        private UIHerrCell4 mUIHerrCell;
         #endregion
     }
     
@@ -2079,6 +2379,42 @@ namespace Tests
         
         #region Fields
         private WpfText mUITestIncText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class UIHerrCell4 : WpfCell
+    {
+        
+        public UIHerrCell4(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfCell.PropertyNames.ColumnHeader] = "Anrede";
+            this.WindowTitles.Add("MainWindow");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfText UIHerrText
+        {
+            get
+            {
+                if ((this.mUIHerrText == null))
+                {
+                    this.mUIHerrText = new WpfText(this);
+                    #region Search Criteria
+                    this.mUIHerrText.SearchProperties[WpfText.PropertyNames.Name] = "Herr";
+                    this.mUIHerrText.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUIHerrText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfText mUIHerrText;
         #endregion
     }
     
@@ -2628,10 +2964,29 @@ namespace Tests
                 return this.mUIItemCustom;
             }
         }
+        
+        public WpfCustom UIItemCustom1
+        {
+            get
+            {
+                if ((this.mUIItemCustom1 == null))
+                {
+                    this.mUIItemCustom1 = new WpfCustom(this);
+                    #region Search Criteria
+                    this.mUIItemCustom1.SearchProperties[WpfControl.PropertyNames.ClassName] = "Uia.TischView";
+                    this.mUIItemCustom1.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemCustom1.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUIItemCustom1;
+            }
+        }
         #endregion
         
         #region Fields
         private WpfCustom mUIItemCustom;
+        
+        private WpfCustom mUIItemCustom1;
         #endregion
     }
     

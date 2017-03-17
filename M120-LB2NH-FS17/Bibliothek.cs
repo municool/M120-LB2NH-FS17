@@ -114,6 +114,13 @@ namespace M120_LB2NH_FS17
             Personen[index] = p;
         }
 
+        /// Linq methode um herauszufinden ob an dem 
+        /// gewählten stuhl des gewählten Tisches jemand sitzt.
+        public static Person GetPersonOnChair(Tisch t, int chairId)
+        {
+            return (from p in t.Personen where p.Platz == chairId select p).FirstOrDefault();
+        }
+
         #endregion
     }
 }

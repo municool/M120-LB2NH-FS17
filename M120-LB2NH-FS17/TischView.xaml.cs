@@ -28,6 +28,8 @@ namespace M120_LB2NH_FS17
 
         /// Zeichnet die Stühle mithilfe eines Rotators im 
         /// entspechend kalkuliertem winkel um den Tisch herum
+        /// falls der Tisch bereits existiert und Personen an den 
+        /// Stühlen sitzen werden ToolTips generiert.
         private void DrawChairs()
         {
             var angle = 360/TischObject.MaximaleAnzahlPersonen;
@@ -64,10 +66,12 @@ namespace M120_LB2NH_FS17
 
                 rotatetrans.Angle += angle;
             }
-
         }
 
-
+        /// Listener Stuhl wurde angecklickt.
+        /// Herauslesen des Tooltips und Parsen der nummer des Stuhls.
+        /// Herausfinden Ob bereits eine Person auf dem Stuhl sitzt 
+        /// wenn ja öffnen der PersonView (update)
         private void Chair_MouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             var tooltip = ((Ellipse) sender).ToolTip.ToString();
@@ -75,7 +79,7 @@ namespace M120_LB2NH_FS17
             var chairIdString = Regex.Match(tooltip, @"\d+").ToString();
             int.TryParse(chairIdString, out chairId);
 
-            var p = GetPersonOnChair(chairId);
+            var p = Bibliothek.GetPersonOnChair(TischObject, chairId);
 
             if (p == null) return;
 
@@ -83,14 +87,10 @@ namespace M120_LB2NH_FS17
             ClickOnChair?.Invoke(this, e);
         }
 
+        /// Linq methode welche mit einem Platz und dem jeweiligen Tisch ein PersonenName zurückgibt
         private string GetPersonName(int platz)
         {
            return (from p in TischObject.Personen where p.Platz == platz select p.Name).FirstOrDefault();
-        }
-
-        private Person GetPersonOnChair(int chair)
-        {
-            return (from p in TischObject.Personen where p.Platz == chair select p).FirstOrDefault();
         }
     }
 }

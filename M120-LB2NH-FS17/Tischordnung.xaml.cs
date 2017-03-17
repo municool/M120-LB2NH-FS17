@@ -37,6 +37,7 @@ namespace M120_LB2NH_FS17
 
         /// Zeichnet die gewählten Tische neu in einer schräg 
         /// zueinanderliegenden Position
+        /// fügt listener hinzu
         private void DrawTables()
         {
             var top = -200;
@@ -58,11 +59,15 @@ namespace M120_LB2NH_FS17
             }
         }
 
+        /// Listener Stuhl wurde angecklickt.
         private void ChairClickedForwarder(object sender, EventArgs e)
         {
             ChairClicked?.Invoke(sender, e);
         }
 
+        /// Listener Save Button wurde geklickt. 
+        /// Liest werte aus + erstellt neue Tische und Stühle 
+        /// oder löscht stühle wieder wenn keine Personen darauf sitzen
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             var anzahlTische = cbTische.SelectedIndex + 1;
@@ -71,7 +76,7 @@ namespace M120_LB2NH_FS17
 
             if (currAnzahlTische < anzahlTische)
             {
-                for (int i = 0; i < anzahlTische-currAnzahlTische; i++)
+                for (int i = 0; i < anzahlTische - currAnzahlTische; i++)
                 {
                     var tisch = new Tisch()
                     {
@@ -81,15 +86,28 @@ namespace M120_LB2NH_FS17
                     };
                     Bibliothek.Tisch_neu(tisch);
                 }
-                
+
             }
 
             foreach (var tisch in _currVeranstaltung.Tische)
             {
+                if (maxAnzahlPersonen <= tisch.MaximaleAnzahlPersonen)
+                {
+                    for (int i = maxAnzahlPersonen + 1; i <= tisch.MaximaleAnzahlPersonen; i++)
+                    {
+                        foreach (var person in Bibliothek.Person_Alle())
+                        {
+                            if (Bibliothek.GetPersonOnChair(tisch, i) != null)
+                            {
+                                MessageBox.Show("aktion nicht möglich. Am Tisch " + tisch + " sitzt eine Person auf Stuhl " + i);
+                                return;
+                            }
+                        }
+                    }
+                }
                 tisch.MaximaleAnzahlPersonen = maxAnzahlPersonen;
+                InitTablesView();
             }
-
-            InitTablesView();
         }
     }
 }

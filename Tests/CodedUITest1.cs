@@ -34,6 +34,14 @@ namespace Tests
             this.UIMap.Testcase2();
         }
 
+        [TestMethod]
+        public void UiTest3()
+        {
+
+            this.UIMap.Test3();
+
+        }
+
         #region Additional test attributes
 
         // You can use the following additional attributes as you write your tests:

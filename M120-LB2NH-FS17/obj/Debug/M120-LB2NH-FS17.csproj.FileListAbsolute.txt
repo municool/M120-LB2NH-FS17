@@ -39,7 +39,6 @@ C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\M12
 C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\M120-LB2NH-FS17.pdb
 C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\M120-LB2NH-FS17\bin\Debug\M120-LB2NH-FS17.exe
 C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\M120-LB2NH-FS17\bin\Debug\M120-LB2NH-FS17.pdb
-C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\M120-LB2NH-FS17.csprojResolveAssemblyReference.cache
 C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\MainWindow.g.cs
 C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\PersonListView.g.cs
 C:\Users\azizzari\Documents\GitHub\M120-LB2NH-FS17\M120-LB2NH-FS17\obj\Debug\PersonView.g.cs
