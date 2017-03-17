@@ -23,9 +23,15 @@ namespace Tests
         }
 
         [TestMethod]
-        public void CodedUITestMethod1()
+        public void UiTest1()
         {
-            // To generate code for this test, select "Generate Code for Coded UI Test" from the shortcut menu and select one of the menu items.
+            this.UIMap.Test1();
+        }
+
+        [TestMethod]
+        public void UiTest2()
+        {
+            this.UIMap.Testcase2();
         }
 
         #region Additional test attributes
@@ -64,5 +70,20 @@ namespace Tests
             }
         }
         private TestContext testContextInstance;
+
+        public UIMap UIMap
+        {
+            get
+            {
+                if ((this.map == null))
+                {
+                    this.map = new UIMap();
+                }
+
+                return this.map;
+            }
+        }
+
+        private UIMap map;
     }
 }
